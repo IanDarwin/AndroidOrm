@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+		<session-factory>
+				<!-- Using Hypersonic HSQL -->
+				<property name="connection.url">jdbc:hsqldb:tmp/hibdemo.db</property>
+				<property name="connection.username">sa</property>
+				<property name="connection.password"></property>
+				<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+				<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+				
+				<!-- Using MySQL -->	
+				<!--
+                <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+                <property name="connection.url">jdbc:mysql://localhost:3306/dbex91</property>
+                <property name="connection.username">student</property>
+                <property name="connection.password">student</property>
+                <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+				-->
+				
+				<property name="hibernate.connection.isolation">2</property>
+				<property name="hibernate.jdbc.batch_size">0</property>
+
+				<!-- Make hibernate manage session contexts -->
+				<property name="hibernate.current_session_context_class">
+					org.hibernate.context.ThreadLocalSessionContext</property>
+
+				<property name="hibernate.hbm2ddl.auto">
+					create-drop
+				</property>
+
+				<property name="show_sql">true</property>
+				
+				<!-- Hibernate has to be told about each class, like a strict JPA implementation -->
+				<mapping class="domain.Address"/>
+				<mapping class="domain.Country"/>
+				<mapping class="domain.Person"/>
+				<mapping class="domain.Preference"/>
+				
+				<mapping class="domain.model.Recording"/>
+				<mapping class="domain.model.MusicRecording"/>
+				<mapping class="domain.model.Track"/>
+				<mapping class="domain.model.VideoRecording"/>
+				<mapping class="domain.model.Actor"/>
+				
+				<mapping class="domain.sales.Customer"/>
+				<mapping class="domain.sales.SalesPerson"/>
+
+				<mapping class="hibernate.Type1"/>
+				<mapping class="hibernate.Type2"/>
+
+		</session-factory>
+</hibernate-configuration>
