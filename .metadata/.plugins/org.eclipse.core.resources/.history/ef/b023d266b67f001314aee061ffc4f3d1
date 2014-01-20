@@ -1,7 +1,0 @@
-Some of the files under "domain.model" (formerly known as the "rain"
-package) originated with Learning Tree.  The Rainforest package was
-first built for Course 570; versions were spun off for various
-courses; this started with the one for Course 936, EJB3 and JPA,
-author Chris Czarnecki.  It was heavily modified by Ian Darwin and
-merged with a lot of other code for use as a standalone JPA Persistence
-Demo.
