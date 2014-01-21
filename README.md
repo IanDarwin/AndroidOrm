@@ -20,6 +20,6 @@ to set things up this way.
 | Gwenn SQLite       | https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A |
 | Hibernate          | http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect | 
 | Jpa-hibernate      | n/a | ORM | Y | JPA with Hibernate and Gwenn | 
-| ORMLite            | orlite.com | ORM | Y | Supports JDBC, Android | custom | 
+| ORMLite            | ormlite.com | ORM | Y | Supports JDBC, Android | custom | 
 | Sugar ORM          | http://satyan.github.io/sugar/ | Active Record | ? | 
 | Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a |
