@@ -1,2 +1,10 @@
-*/bin/*
-*/target/*
+.metadata
+bin
+bin/*
+gen
+gen/*
+target
+target/*
+*.ap?
+*.class
+*.dex
