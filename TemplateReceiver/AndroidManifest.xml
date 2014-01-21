@@ -13,14 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.example.entryactivity.EntryActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- EntryActivity declared in CommonCode Manifest, which is merged as per project.properties -->
         <activity
             android:name="com.example.templatereceiver.SavingActivity"
             android:label="@string/app_name" >
