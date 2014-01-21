@@ -1,13 +1,11 @@
 package com.example.entryactivity;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -61,7 +59,7 @@ public class EntryActivity extends Activity {
 			// And pass the filled-in Person to the save handler
 			Intent intent = new Intent(this, Class.forName(clazzName));
 			intent.putExtra("person", p);
-			LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+			startActivity(intent);
 		} catch (Exception e) {
 			String msg = "Caught exception " + e;
 			Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
