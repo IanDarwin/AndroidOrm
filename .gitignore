@@ -8,3 +8,4 @@ target/*
 *.ap?
 *.class
 *.dex
+RemoteSystemsTempFiles
