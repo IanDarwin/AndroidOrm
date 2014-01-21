@@ -18,17 +18,12 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.example.templatereceiver.SavingActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <!--  Will this catch a LocalBroadcast intent?? -->
-                 <category android:name="registerPerson" />
-            </intent-filter>
         </activity>
     </application>
 
