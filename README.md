@@ -6,7 +6,7 @@ wherein everything is reduced to mush, or at least hash, before it can be proces
 | Technology         | URL  | Type | JPA Annot? | Tech  | Notes
 | ------------------:|------|:-------:|-------|------|-----|
 | AndroidRecord      | http://www.activeandroid.com/ | Active Record | ?| |   |
-| Batoo JPA          | | JPA with Batoo Provider | HSQL database | ?|
+| Batoo JPA          | | JPA with Batoo Provider | Y | HSQL database | ?|
 | greenDAO           | http://greendao-orm.com/ | ? | ? | ?|
 | Gwenn SQLite       | https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A |
 | Hibernate          | http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect | 
