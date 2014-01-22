@@ -1,19 +1,21 @@
 package com.example.templatereceiver;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
-//import com.example.entryactivity.EntryActivity;
+import com.example.entryactivity.EntryActivity;
 
 public class SavingActivity extends Activity {
 
-	//@SuppressWarnings("unused")// Needed to force loading of this class
-	//private EntryActivity activity = new EntryActivity();
+	@SuppressWarnings("unused")// Needed to force loading of this class
+	private EntryActivity activity = new EntryActivity();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		startActivity(new Intent(this, EntryActivity.class));
 		setContentView(R.layout.activity_saving);
 	}
 
