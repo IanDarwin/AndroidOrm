@@ -2,9 +2,9 @@
 
 Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So we undertook this little study.
 
-The goal is to save a "Person" object, which may be a subclass called Customer, and may or may not have an Address object associated with it.
+The goal is to save a "Person" object, which may be a subclass called Customer, and may or may not have an Address object associated with it, and read it back in again.
 
-The main project is in CommonCode, which provides JPA-annotated entities and a
+The first half of each project is in CommonCode, which provides JPA-annotated entities and a
 "Signup" name-and-address form. When you submit the form, it passes the Person
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
 "save the Person to sqlite" action, and display "success". 
@@ -30,9 +30,10 @@ file in src/. See TemplateReceiver for example. In more detail:
 . Change the package name from "templatereceiver" to your ORM's name (lower case)
 . Make the corresponding change in androidorm.properties
 . Add your technology's JAR files into libs/
-. Write the "saving" code at the XXX in SavingActivity.
-   Note that for threading reasons, everything from the XXX to the end of the method
-   should be done in a background thread!
+. Write the "saving" code at the first XXX, and the "read back" at the second,
+in SavingActivity.  Note that for threading reasons, all this has to be done in a
+background thread, but the updating of the UI has to be done on the UI thread;
+please respect the overall structure that is set up here.
 
 Please DO NOT:
 
