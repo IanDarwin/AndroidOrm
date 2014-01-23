@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry kind="src" output="bin/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -21,7 +21,7 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CommonCode"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CommonCode"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
