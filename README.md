@@ -18,11 +18,17 @@ file in src/. See TemplateReceiver for example. In more detail:
 2) copy the entire TemplateReceiver project to a new project, named after
    your technology (use the names below if implementing one of these?).
 3) Change the package name from "templatereceiver" to your ORM's name (lower case)
-3) Make the corresponding change in androidorm.properties
+4) Make the corresponding change in androidorm.properties
 5) Add your technology's JAR files into libs/
 6) Write the "saving" code at the XXX in SavingActivity.
 
-This is mainly a POC to show if it is possible to set things up this way.
+Please DO NOT:
+
+1) Switch your build to Maven, Gradle, etc., unless you have a really good reason to;
+2) Go changing any other config files; Android build is kinda sensitive to changes,
+and we have it working such that TemplateReceiver's main activity is coming from the
+library project, it passes control to SavingActivity, and it "just works" as it stands.
+3) Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
 
 | Technology         | URL  | Type | JPA Annot? | Tech  | Notes
 | ------------------:|------|:-------:|-------|------|-----|
