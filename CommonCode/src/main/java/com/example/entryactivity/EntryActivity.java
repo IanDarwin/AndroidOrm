@@ -11,14 +11,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import domain.Address;
 import domain.Person;
 
 public class EntryActivity extends Activity {
 	
 	private static final String TAG = EntryActivity.class.getSimpleName();
 	
-	EditText mFirstName, mLastName;
-	// XXX more
+	EditText mFirstName, mLastName, mStreet, mCity;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,8 @@ public class EntryActivity extends Activity {
 		setContentView(R.layout.activity_entry);
 		mFirstName = (EditText) findViewById(R.id.etFirstName);
 		mLastName =(EditText) findViewById(R.id.etLastName);
+		mStreet = (EditText) findViewById(R.id.etstreet);
+		mCity = (EditText) findViewById(R.id.etcity);
 		// XXX more
 	}
 
@@ -41,6 +43,15 @@ public class EntryActivity extends Activity {
 		Person p = new Person();
 		p.setFirstName(mFirstName.getText().toString());
 		p.setLastName(mLastName.getText().toString());
+		
+		String street = mStreet.getText().toString();
+		String city = mCity.getText().toString();
+		if (street != null || city != null) {
+			Address address = new Address();
+			address.setStreetAddress(street);
+			address.setCity(city);
+			p.setAddress(address);
+		}
 		// XXX more
 		
 		try {

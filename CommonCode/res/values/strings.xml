@@ -4,4 +4,15 @@
 
 	<string name="action_settings">Settings</string>
 
+	<!-- For the entry form -->
+	<string name="last_name">Last Name</string>
+	<string name="first_name">First Name</string>
+
+	<string name="street">Street</string>
+	<string name="city">City</string>
+	
+	<string name="sales_rep">Sales Rep</string>
+	
+	<string name="submit">Register</string>
+
 </resources>

@@ -19,6 +19,7 @@ public class Person implements Serializable {
 	int id;
 	protected String firstName;
 	protected String lastName;
+	protected Address address;
 	int version;
 	
 	public Person() {
@@ -33,7 +34,8 @@ public class Person implements Serializable {
 	
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + ": '" +getName() + "'";
+		return getClass().getSimpleName() + ": '" +getName() + "'" +
+				(getAddress() != null ? getAddress() : "");
 	}
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -78,6 +80,14 @@ public class Person implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override

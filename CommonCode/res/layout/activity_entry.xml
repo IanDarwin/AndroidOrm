@@ -13,19 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etFirstName"
-        android:hint="First Name" />
+        android:hint="@string/first_name" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etLastName"
-        android:hint="Last Name" />
+        android:hint="@string/last_name" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etstreet"
+        android:hint="@string/street" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etcity"
+        android:hint="@string/city" />
     
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Register"
+        android:text="@string/submit"
         android:onClick="register"/>
 
 </LinearLayout>
