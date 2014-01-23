@@ -7,21 +7,26 @@ import android.widget.TextView;
 import domain.Person;
 
 public class SavingActivity extends Activity {
+	
+	Person p;
+	TextView message;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_saving);
+		message = (TextView) findViewById(R.id.saved);
 		
-		Person p = (Person) getIntent().getSerializableExtra("person");
-		
+		p = (Person) getIntent().getSerializableExtra("person");
+
 		// Write some code here to:                        XXX DELETE THIS LINE WHEN DONE
 		// Save the Person (which might be a Customer subclass, and mmight have an Address!)
 		// Of course Saving to SQLite cannot be done on the UI thread...
 		
-		TextView message = (TextView) findViewById(R.id.saved);
+		// XXX Fetch this copy of "p" back from the database.
+		Person q = p;
 		String format = getString(R.string.saved);
-		String toDisplay = String.format(format, p);
+		String toDisplay = String.format(format, q);
 		message.setText(toDisplay);
 	}
 

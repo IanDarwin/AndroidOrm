@@ -21,6 +21,8 @@ file in src/. See TemplateReceiver for example. In more detail:
 4) Make the corresponding change in androidorm.properties
 5) Add your technology's JAR files into libs/
 6) Write the "saving" code at the XXX in SavingActivity.
+   Note that for threading reasons, everything from the XXX to the end of the method
+   should be done in a background thread!
 
 Please DO NOT:
 
@@ -29,6 +31,8 @@ Please DO NOT:
 and we have it working such that TemplateReceiver's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
 3) Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
+
+When it works, send me a pull request!
 
 | Technology         | URL  | Type | JPA Annot? | Tech  | Notes
 | ------------------:|------|:-------:|-------|------|-----|
