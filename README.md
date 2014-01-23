@@ -27,6 +27,7 @@ file in src/. See TemplateReceiver for example. In more detail:
 Please DO NOT:
 
 1) Switch your build to Maven, Gradle, etc., unless you have a really good reason to;
+   (we want them all to work and play the same way, so try to stick w/ the Eclipse build).
 2) Go changing any other config files; Android build is kinda sensitive to changes,
 and we have it working such that TemplateReceiver's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
