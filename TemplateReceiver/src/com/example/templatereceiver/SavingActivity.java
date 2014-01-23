@@ -23,7 +23,8 @@ public class SavingActivity extends Activity {
 				// Write some code here to:                        XXX DELETE THIS LINE WHEN DONE
 				// Save the Person (which might be a Customer subclass, and might have an Address!)
 				
-				// XXX Fetch this copy of "p" back from the database.
+				// Fetch this copy of "p" back from the database.
+				// XXX DELETE THIS LINE WHEN DONE - get it by Id, probably!
 				Person q = p;
 				
 				String format = getString(R.string.saved);
