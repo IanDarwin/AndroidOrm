@@ -7,6 +7,13 @@ The main project is in CommonCode, which provides JPA-annotated entities and a
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
 "save the Person to sqlite" action, and display "success". 
 
+=== What We Sought
+
+We started this looking for a "small, simple, lightweight but powerful" (everybody's
+favorite conflicting needs, right) Java ORM for Android. As a bare minimum it had
+to support relationships (Person" has-a Address) and at least one level of
+inheritance ("Customer is-a Person").
+
 === TO BUILD A NEW DEMO:
 
 The Main activity's class name must be listed in your AndroidManifest,
@@ -36,19 +43,19 @@ When it works, send me a pull request!
 
 === Technologies
 
-.List of Android ORM technologies (to be) tried
+.Table of Android ORM technologies (to be) tried
 [options="header"]
 |===========
-| Technology         | URL  | Type | JPA Annot? | Tech  | Notes
+| Technology         | URL  | Type | JPA Annot? | Tech  | Notes |
 | AndroidRecord      | http://www.activeandroid.com/ | Active Record | ?| |   |
-| Batoo JPA          | | JPA with Batoo Provider | Y | HSQL database | ?|
-| greenDAO           | http://greendao-orm.com/ | ? | ? | ?|
-| Gwenn SQLite       | https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A |
-| Hibernate          | http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect | 
-| Jpa-hibernate      | n/a | ORM | Y | JPA with Hibernate and Gwenn | 
+| Batoo JPA          | https://github.com/BatooOrg/HelloAndroid | JPA, Batoo Provider | Y | HSQL database | | 
+| greenDAO           | http://greendao-orm.com/ | ? | ? | ?| |
+| Gwenn SQLite       | https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A | | |
+| Hibernate          | http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect |  |
+| Jpa-hibernate      | n/a | ORM | Y | JPA with Hibernate and Gwenn |  |
 | ORMLite            | ormlite.com | ORM | Y | Supports JDBC, Android | custom | 
-| Sugar ORM          | http://satyan.github.io/sugar/ | Active Record | ? | 
-| Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a |
+| Sugar ORM          | http://satyan.github.io/sugar/ | Active Record | ? |  | |
+| Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a | |
 |===========
 === WHO
 
