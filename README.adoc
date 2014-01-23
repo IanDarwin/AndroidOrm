@@ -2,6 +2,8 @@
 
 Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So we undertook this little study.
 
+The goal is to save a "Person" object, which may be a subclass called Customer, and may or may not have an Address object associated with it.
+
 The main project is in CommonCode, which provides JPA-annotated entities and a
 "Signup" name-and-address form. When you submit the form, it passes the Person
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
@@ -35,13 +37,15 @@ file in src/. See TemplateReceiver for example. In more detail:
 Please DO NOT:
 
 . Switch your build to Maven, Gradle, etc., unless you have a really good reason to;
-   (we want them all to work and play the same way, so try to stick w/ the Eclipse build).
+we want them all to work and play the same way, so try to stick w/ the Eclipse build.
+That said, there is a POM file in the CommonCode project if you want to go that route;
+just do +mvn install" and depend on it.
 . Go changing any other config files; Android build is kinda sensitive to changes,
 and we have it working such that TemplateReceiver's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
 . Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
 
-When it works, send me a pull request!
+When it works, commit it, and send me a pull request!
 
 === Technologies
 
