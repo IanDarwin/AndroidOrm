@@ -9,9 +9,6 @@ import com.example.entryactivity.EntryActivity;
 
 public class SavingActivity extends Activity {
 
-	@SuppressWarnings("unused")// Needed to force loading of this class
-	private EntryActivity activity = new EntryActivity();
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
