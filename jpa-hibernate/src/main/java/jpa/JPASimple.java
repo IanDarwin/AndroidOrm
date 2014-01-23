@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import domain.Address;
@@ -20,8 +21,8 @@ public class JPASimple {
 		// These two steps would be done for you
 		// were you running in an EE App Server.
 		// Or just the EntityManager injected if you were using JavaEE or Spring
-		EntityManagerFactory entityMgrFactory = JPAUtil.getEntityManagerFactory();
-		EntityManager entityManager = JPAUtil.getEntityManager();
+		EntityManagerFactory entityMgrFactory = Persistence.createEntityManagerFactory("androidorm");
+		EntityManager entityManager = entityMgrFactory.createEntityManager();
 		
 		try {
 			EntityTransaction transaction = entityManager.getTransaction();
