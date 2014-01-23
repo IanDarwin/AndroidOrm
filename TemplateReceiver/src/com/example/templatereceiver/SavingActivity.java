@@ -12,7 +12,7 @@ public class SavingActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		startActivity(new Intent(this, EntryActivity.class));
+		//startActivity(new Intent(this, EntryActivity.class));
 		setContentView(R.layout.activity_saving);
 	}
 
