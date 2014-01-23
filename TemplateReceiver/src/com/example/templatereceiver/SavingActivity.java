@@ -16,8 +16,8 @@ public class SavingActivity extends Activity {
 		Person p = (Person) getIntent().getSerializableExtra("person");
 		
 		// Write some code here to:                        XXX DELETE THIS LINE WHEN DONE
-		// Save the Person (which might be a Customer!)
-		// If that doen't throw an exception, the code below will report success
+		// Save the Person (which might be a Customer subclass, and mmight have an Address!)
+		// Of course Saving to SQLite cannot be done on the UI thread...
 		
 		TextView message = (TextView) findViewById(R.id.saved);
 		String format = getString(R.string.saved);
