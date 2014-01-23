@@ -10,9 +10,11 @@ object on to an ORM-specific SavingActivity, which is expected to do the technol
 === What We Sought
 
 We started this looking for a "small, simple, lightweight but powerful" (everybody's
-favorite conflicting needs, right) Java ORM for Android. As a bare minimum it had
-to support relationships (Person" has-a Address) and at least one level of
-inheritance ("Customer is-a Person").
+favorite conflicting needs, right) Java ORM for Android. We would settle on an 
+ActiveRecord implementation if it otherwise me the criteria. As a bare minimum 
+whatever we chose had to support relationships (Person" has-a
+Address) and at least one level of inheritance ("Customer is-a
+Person"; ideally, "save this object without being told which it is").
 
 === TO BUILD A NEW DEMO:
 
