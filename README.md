@@ -1,4 +1,4 @@
-The Android ORM Project
+= The Android ORM Project
 
 Having worked with JPA and Hibernate for years, I was flabbergasted by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So we undertook this little study.
 
@@ -7,8 +7,7 @@ The main project is in CommonCode, which provides JPA-annotated entities and a
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
 "save the Person to sqlite" action, and display "success". 
 
-TO BUILD A NEW DEMO:
---------------------
+== TO BUILD A NEW DEMO:
 
 The Main activity's class name must be listed in your AndroidManifest,
 and the taret "save and display" must be listed in a Java Properties
@@ -46,3 +45,13 @@ When it works, send me a pull request!
 | ORMLite            | ormlite.com | ORM | Y | Supports JDBC, Android | custom | 
 | Sugar ORM          | http://satyan.github.io/sugar/ | Active Record | ? | 
 | Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a |
+
+== WHO
+
+This project was entirely funded by the Centre for Global eHealth Innovation at the
+University Health Network, Toronto. http://ehealthinnovation.org.
+
+The original project setup (CommonCode and TemplateReceiver) was done by Ian Darwin
+(http://ehealthinnovation.org/people/ian-darwin/).
+
+Technology-specific projects were contributed by ...
