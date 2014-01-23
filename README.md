@@ -4,13 +4,25 @@ Having worked with JPA and Hibernate for years, I was flabbergasted by the desig
 
 The main project is in CommonCode, which provides JPA-annotated entities and a
 "Signup" name-and-address form. When you submit the form, it passes the Person
-object on to another Activity, which is expected to do the technology-specific
-"save the Person to sqlite, and display the results" action. The Main activity's
-class name must be listed in your AndroidManifest, and the taret "save and display"
-must be listed in a Java Properties file in src/. See TemplateReceiver for example.
+object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
+"save the Person to sqlite" action, and display "success". 
 
-**Note that none of this works yet**; as present it's a POC to show if it is possible
-to set things up this way.
+TO BUILD A NEW DEMO:
+--------------------
+
+The Main activity's class name must be listed in your AndroidManifest,
+and the taret "save and display" must be listed in a Java Properties
+file in src/. See TemplateReceiver for example. In more detail:
+
+1) Clone this entire project if you didn't already.
+2) copy the entire TemplateReceiver project to a new project, named after
+   your technology (use the names below if implementing one of these?).
+3) Change the package name from "templatereceiver" to your ORM's name (lower case)
+3) Make the corresponding change in androidorm.properties
+5) Add your technology's JAR files into libs/
+6) Write the "saving" code at the XXX in SavingActivity.
+
+This is mainly a POC to show if it is possible to set things up this way.
 
 | Technology         | URL  | Type | JPA Annot? | Tech  | Notes
 | ------------------:|------|:-------:|-------|------|-----|
