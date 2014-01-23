@@ -1,19 +1,28 @@
 package com.example.templatereceiver;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-
-import com.example.entryactivity.EntryActivity;
+import android.widget.TextView;
+import domain.Person;
 
 public class SavingActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//startActivity(new Intent(this, EntryActivity.class));
 		setContentView(R.layout.activity_saving);
+		
+		Person p = (Person) getIntent().getSerializableExtra("person");
+		
+		// Write some code here to:                        XXX DELETE THIS LINE WHEN DONE
+		// Save the Person (which might be a Customer!)
+		// If that doen't throw an exception, the code below will report success
+		
+		TextView message = (TextView) findViewById(R.id.saved);
+		String format = getString(R.string.saved);
+		String toDisplay = String.format(format, p);
+		message.setText(toDisplay);
 	}
 
 	@Override

@@ -3,6 +3,8 @@
 
     <string name="app_name">TemplateReceiver</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    
+    <!-- Used in String.format so use %s -->
+    <string name="saved">Saved: %s</string>
 
 </resources>

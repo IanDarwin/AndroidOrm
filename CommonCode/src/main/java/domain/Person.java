@@ -33,7 +33,7 @@ public class Person implements Serializable {
 	
 	@Override
 	public String toString() {
-		return getName();
+		return getClass().getSimpleName() + ": '" +getName() + "'";
 	}
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
