@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Batoo JPA</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Used in String.format so use %s -->
+    <string name="saved">Saved: %s</string>
+
+</resources>
