@@ -16,11 +16,13 @@
 	</properties>
 
 	<dependencies>
+	    <!-- We do NOT need this dependency as there is an Android dependency.
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>orm-entities</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
+	     -->
 
 		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
 			typesafe criteria queries -->
