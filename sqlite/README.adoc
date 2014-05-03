@@ -1,0 +1,3 @@
+== sqlite - the low-level, built-in API
+
+This is doing it the hard way, but it works.
