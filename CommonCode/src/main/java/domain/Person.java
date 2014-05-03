@@ -16,7 +16,7 @@ import javax.persistence.Version;
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 6204749922868486719L;
-	int id;
+	long id;
 	protected String firstName;
 	protected String lastName;
 	protected Address address;
@@ -39,11 +39,11 @@ public class Person implements Serializable {
 	}
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	

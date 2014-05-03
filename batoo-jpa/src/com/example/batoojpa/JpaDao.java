@@ -57,7 +57,7 @@ public class JpaDao {
 		entityManager.persist(np);
 		transaction.commit();
 
-		int id = np.getId();
+		long id = np.getId();
 		System.out.println("Created Person with Id " + id);
 	}
 
