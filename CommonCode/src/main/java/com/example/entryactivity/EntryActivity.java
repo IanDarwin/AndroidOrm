@@ -23,6 +23,7 @@ public class EntryActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "EntryActivity.onCreate()");
 		setContentView(R.layout.activity_entry);
 		mFirstName = (EditText) findViewById(R.id.etFirstName);
 		mLastName =(EditText) findViewById(R.id.etLastName);
