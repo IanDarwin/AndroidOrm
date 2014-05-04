@@ -24,8 +24,8 @@ Person"; ideally, "save this object without being told which it is").
 === TO BUILD A NEW DEMO:
 
 The Main activity's class name must be listed in your AndroidManifest,
-and the taret "save and display" must be listed in a Java Properties
-file in src/. See TemplateReceiver for example. In more detail:
+and the target-specific "save and display" must be listed in a Java Properties
+file. See TemplateReceiver for example. In more detail:
 
 . Clone this entire project if you didn't already.
 . copy the entire TemplateReceiver project to a new project, named after
@@ -33,11 +33,14 @@ file in src/. See TemplateReceiver for example. In more detail:
 . UPDATE THE README FILE to give an idea what it's about
 . Change the package name from "templatereceiver" to your ORM's name (lower case)
 . Make the corresponding change in androidorm.properties
+. Make the corresponding change in AndroidManifest.xml
 . Add your technology's JAR files into libs/
 . Write the "saving" code at the first XXX, and the "read back" at the second,
 in SavingActivity.  Note that for threading reasons, all this has to be done in a
 background thread, but the updating of the UI has to be done on the UI thread;
 please respect the overall structure that is set up here.
+. For clarity, "grep -ri templatereceiver" should not find anything!
+. Now you can try compiling, either with Eclipse ADT or with Maven.
 
 Please DO NOT:
 
