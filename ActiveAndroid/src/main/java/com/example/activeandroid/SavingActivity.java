@@ -1,6 +1,6 @@
-package com.example.templatereceiver;
+package com.example.activeandroid;
 
-import com.example.templatereceiver.SavingActivity;
+import com.example.activeandroid.SavingActivity;
 
 import android.app.Activity;
 import android.os.Bundle;

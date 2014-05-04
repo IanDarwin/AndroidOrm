@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.templatereceiver"
+    package="com.example.activeandroid"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -26,7 +26,7 @@
         </activity>
         
         <!-- CHANGE THIS ONE INSTEAD! -->
-        <activity android:name="com.example.templatereceiver.SavingActivity"
+        <activity android:name="com.example.activeandroid.SavingActivity"
             android:label="@string/app_name">
             
         </activity>
