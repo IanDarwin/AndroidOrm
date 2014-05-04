@@ -1,18 +1,24 @@
 package com.example.templatereceiver;
 
+import com.example.templatereceiver.SavingActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import domain.Person;
 
+
 public class SavingActivity extends Activity {
+	final static String TAG = SavingActivity.class.getName();
 	
 	TextView message;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "SavingActivity.onCreate()");
 		setContentView(R.layout.activity_saving);
 		message = (TextView) findViewById(R.id.saved);
 		final Person p = (Person) getIntent().getSerializableExtra("person");
