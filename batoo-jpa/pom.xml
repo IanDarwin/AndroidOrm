@@ -3,7 +3,7 @@
   <groupId>com.example</groupId>
   <artifactId>batoo-jpa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Batto JPA Example</name>
+  <name>Batoo JPA Example</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.batoo.jpa</groupId>
