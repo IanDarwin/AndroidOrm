@@ -40,14 +40,14 @@ please respect the overall structure that is set up here.
 
 Please DO NOT:
 
-. Switch your build to Maven, Gradle, etc., unless you have a really good reason to;
-we want them all to work and play the same way, so try to stick w/ the Eclipse build.
-That said, there is a POM file in the CommonCode project if you want to go that route;
-just do +mvn install" and depend on it.
 . Go changing any other config files; Android build is kinda sensitive to changes,
 and we have it working such that TemplateReceiver's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
 . Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
+
+If you want to build build with Maven, Gradle, etc., there is a POM file in
+the CommonCode project if you want to go that route; just do +mvn install+
+and depend on it (batoo-jpa is done this way).
 
 When it works, commit it, and send me a pull request!
 
