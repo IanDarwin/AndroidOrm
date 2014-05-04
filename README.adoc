@@ -30,6 +30,7 @@ file in src/. See TemplateReceiver for example. In more detail:
 . Clone this entire project if you didn't already.
 . copy the entire TemplateReceiver project to a new project, named after
    your technology (use the names below if implementing one of these?).
+. UPDATE THE README FILE to give an idea what it's about
 . Change the package name from "templatereceiver" to your ORM's name (lower case)
 . Make the corresponding change in androidorm.properties
 . Add your technology's JAR files into libs/
