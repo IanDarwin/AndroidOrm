@@ -66,7 +66,7 @@ public class EntryActivity extends Activity {
 			personClazzName = pr.getProperty("addressClass", "domain.pojo.AddressPojo");
 			is.close();
 		} catch (IOException e) {
-			die("IO Error trying to read androidorm.properties: " + e);
+			die("IO Error trying to read androidorm.properties", e);
 		}
 		Person p = null;
 		Address address = null;
@@ -74,7 +74,7 @@ public class EntryActivity extends Activity {
 			p = (Person) Class.forName(personClazzName).newInstance();
 			address = (Address)Class.forName(addressClazzName).newInstance();
 		} catch (Exception e) {
-			die(e.toString());
+			die("Exception in loading Person and Address", e);
 		}
 		p.setFirstName(mFirstName.getText().toString());
 		p.setLastName(mLastName.getText().toString());
@@ -94,18 +94,24 @@ public class EntryActivity extends Activity {
 			intent.putExtra("person", (Serializable)p);
 			startActivity(intent);
 		} catch (Exception e) {
-			String msg = "Caught exception " + e;
-			Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-			Log.wtf(TAG, msg);
-			System.exit(1);
+			die("Caught exception starting intent", e);
+
 		}
 	}
 
-	private void die(String msg) {
+	private void die(String msg, Exception e) {
 		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-		Log.wtf(TAG, msg);
-		SystemClock.sleep(1000);
+		Log.wtf(TAG, msg, e);
+		new Thread(new Runnable() {
+			public void run() {
+				SystemClock.sleep(1000);
+				}
+		}).start();
 		System.exit(1);
+	}
+	
+	private void die(String msg) {
+		die(msg, null);
 	}
 
 }
