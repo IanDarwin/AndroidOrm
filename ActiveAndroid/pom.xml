@@ -16,7 +16,7 @@
         <platform.sdk>16</platform.sdk>
         <platform.version>4.1.1.4</platform.version>
         <platform.support-version>r7</platform.support-version>
-		<android.plugin.version>3.8.3-SNAPSHOT</android.plugin.version>
+		<android.plugin.version>3.8.2</android.plugin.version>
 	</properties>
 
 	<dependencies>
