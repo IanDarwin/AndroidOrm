@@ -4,13 +4,18 @@ import domain.Address;
 import domain.Customer;
 import domain.Person;
 
+import com.activeandroid.annotation.Column;
+
 /**
  * A Customer is a Person with addresses and a sales rep.
  */
 public class CustomerAA extends PersonAA implements Customer {
 
 	private static final long serialVersionUID = 31434008848288245L;
+
+	@Column
 	protected Address homeAddress = new AddressAA();
+	@Column
 	protected Address workAddress = new AddressAA();
 	
 	// There can be many customers to one sales rep.

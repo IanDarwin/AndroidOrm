@@ -3,6 +3,7 @@ package domain.activeandroid;
 import java.io.Serializable;
 
 import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
 
 import domain.Address;
 import domain.Country;
@@ -11,10 +12,11 @@ public class AddressAA extends Model implements Serializable, Address {
 
 	private static final long serialVersionUID = -88970592612474705L;
 
-	private long id;
-	
+	@Column
 	private String streetAddress;
+	@Column
 	private String city;
+	@Column
 	private Country country = Country.CANADA;
 
 
