@@ -1,6 +1,8 @@
 package domain;
 
-public interface Person {
+import java.io.Serializable;
+
+public interface Person extends Serializable {
 
 	public abstract String getLastName();
 
