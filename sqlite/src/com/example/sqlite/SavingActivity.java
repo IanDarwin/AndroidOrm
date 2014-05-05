@@ -4,14 +4,16 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import domain.Person;
 
 public class SavingActivity extends Activity {
+	
+	private static final String TAG = SavingActivity.class.getSimpleName();
 	
 	private static final String TABLE_NAME = "person";
 
@@ -37,8 +39,7 @@ public class SavingActivity extends Activity {
 				cv.put("city", p.getAddress().getCity());
 				
 				long id = db.insertOrThrow("person", null, cv);
-				p.setId(id);
-				
+				Log.d(TAG, "Created record " + id);
 				String format = getString(R.string.saved);
 				final String toDisplay = String.format(format, p);
 				runOnUiThread(new Runnable() {
