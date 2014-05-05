@@ -105,9 +105,9 @@ public class EntryActivity extends Activity {
 		new Thread(new Runnable() {
 			public void run() {
 				SystemClock.sleep(1000);
+				System.exit(1);
 				}
 		}).start();
-		System.exit(1);
 	}
 	
 	private void die(String msg) {
