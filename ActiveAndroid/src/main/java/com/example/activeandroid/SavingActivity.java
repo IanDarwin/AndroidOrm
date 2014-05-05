@@ -28,11 +28,12 @@ public class SavingActivity extends Activity {
 			@Override
 			public void run() {
 				// Save the Person (which might be a Customer subclass, and might have an Address!)
-				((PersonAA) p).save();
+				final PersonAA pAA = (PersonAA) p;
+				pAA.save();
+				long id = pAA.getId();
 				
 				// Fetch this copy of "p" back from the database.
-				// XXX get by id as this only works sometimes based onorder
-				Person q = (Person)new Select().from(PersonAA.class).orderBy("firstName").executeSingle();
+				Person q = PersonAA.load(PersonAA.class, id);
 				
 				String format = getString(R.string.saved);
 				final String toDisplay = String.format(format, q);
