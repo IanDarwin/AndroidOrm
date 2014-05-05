@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -x
+
+mvn package android:deploy android:run
