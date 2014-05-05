@@ -1,5 +1,6 @@
 package com.example.activeandroid;
 
+import com.activeandroid.query.Select;
 import com.example.activeandroid.SavingActivity;
 
 import android.app.Activity;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 import domain.Person;
+import domain.activeandroid.PersonAA;
 
 public class SavingActivity extends Activity {
 	final static String TAG = SavingActivity.class.getName();
@@ -25,12 +27,12 @@ public class SavingActivity extends Activity {
 		new Thread(new Runnable(){
 			@Override
 			public void run() {
-				// Write some code here to:                        XXX DELETE THIS LINE WHEN DONE
 				// Save the Person (which might be a Customer subclass, and might have an Address!)
+				((PersonAA) p).save();
 				
 				// Fetch this copy of "p" back from the database.
-				// XXX DELETE THIS LINE WHEN DONE - get it by Id, probably!
-				Person q = p;
+				// XXX get by id as this only works sometimes based onorder
+				Person q = (Person)new Select().from(PersonAA.class).orderBy("firstName").executeSingle();
 				
 				String format = getString(R.string.saved);
 				final String toDisplay = String.format(format, q);
