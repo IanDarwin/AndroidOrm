@@ -22,22 +22,6 @@ public class AddressJPA implements Serializable, Address {
 	private Country country = Country.CANADA;
 
 	/* (non-Javadoc)
-	 * @see domain.Address#getId()
-	 */
-	@Override
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	public int getId() {
-		return id;
-	}
-	/* (non-Javadoc)
-	 * @see domain.Address#setId(int)
-	 */
-	@Override
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	/* (non-Javadoc)
 	 * @see domain.Address#getCity()
 	 */
 	@Override

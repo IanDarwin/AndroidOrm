@@ -8,27 +8,10 @@ import domain.Country;
 public class AddressPojo implements Serializable, Address {
 
 	private static final long serialVersionUID = -3488970592612474705L;
-
-	private int id;
 	
 	private String streetAddress;
 	private String city;
 	private Country country = Country.CANADA;
-
-	/* (non-Javadoc)
-	 * @see domain.Address#getId()
-	 */
-	@Override
-	public int getId() {
-		return id;
-	}
-	/* (non-Javadoc)
-	 * @see domain.Address#setId(int)
-	 */
-	@Override
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	/* (non-Javadoc)
 	 * @see domain.Address#getCity()

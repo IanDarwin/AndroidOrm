@@ -4,10 +4,6 @@ import java.io.Serializable;
 
 public interface Address extends Serializable{
 
-	public abstract int getId();
-
-	public abstract void setId(int id);
-
 	public abstract String getCity();
 
 	public abstract void setCity(String city);
