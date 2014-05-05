@@ -1,0 +1,5 @@
+ToDo:
+
+* TemplateReceiver should be called TemplateSaver.
+* Get BatooJPA enhancer to work under Maven.
+* Finish all the other projects.
