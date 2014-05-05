@@ -1,54 +1,19 @@
 package domain;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import java.io.Serializable;
 
-/**
- * A Customer is a Person with addresses and a sales rep.
- */
-@Entity
-public class Customer extends Person {
+public interface Customer extends Serializable{
 
-	private static final long serialVersionUID = 3143455008848288249L;
-	protected Address homeAddress = new Address();
-	protected Address workAddress = new Address();
-	
-	// There can be many customers to one sales rep.
-	protected Person salesRep;
-	
-	public Customer() {
-		// empty
-	}
-	
-	public Customer(String firstName, String lastName) {
-		super(firstName, lastName);
-	}
+	public abstract Address getHomeAddress();
 
-	@OneToOne
-	public Address getHomeAddress() {
-		return homeAddress;
-	}
+	public abstract void setHomeAddress(Address homeAddress);
 
-	public void setHomeAddress(Address homeAddress) {
-		this.homeAddress = homeAddress;
-	}
+	public abstract Person getSalesRep();
 
-	@ManyToOne
-	public Person getSalesRep() {
-		return salesRep;
-	}
+	public abstract void setSalesRep(Person rep);
 
-	public void setSalesRep(Person rep) {
-		this.salesRep = rep;
-	}
+	public abstract Address getWorkAddress();
 
-	@OneToOne
-	public Address getWorkAddress() {
-		return workAddress;
-	}
+	public abstract void setWorkAddress(Address workAddress);
 
-	public void setWorkAddress(Address workAddress) {
-		this.workAddress = workAddress;
-	}
 }

@@ -2,51 +2,22 @@ package domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public interface Address extends Serializable{
 
-@Entity
-public class Address implements Serializable {
+	public abstract int getId();
 
-	private static final long serialVersionUID = -3488970592612474703L;
+	public abstract void setId(int id);
 
-	private int id;
-	
-	private String streetAddress;
-	private String city;
-	private Country country = Country.CANADA;
+	public abstract String getCity();
 
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	public abstract void setCity(String city);
 
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public Country getCountry() {
-		return country;
-	}
-	public void setCountry(Country country) {
-		this.country = country;
-	}
-	public String getStreetAddress() {
-		return streetAddress;
-	}
-	public void setStreetAddress(String streetAddress) {
-		this.streetAddress = streetAddress;
-	}
-	
-	@Override
-	public String toString() {
-		return id + ": " + streetAddress + ", " + city;
-	}
+	public abstract Country getCountry();
+
+	public abstract void setCountry(Country country);
+
+	public abstract String getStreetAddress();
+
+	public abstract void setStreetAddress(String streetAddress);
+
 }

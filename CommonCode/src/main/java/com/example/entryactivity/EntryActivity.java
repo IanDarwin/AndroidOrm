@@ -1,11 +1,14 @@
 package com.example.entryactivity;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Properties;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -13,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import domain.Address;
 import domain.Person;
+import domain.pojo.AddressPojo;
+import domain.pojo.PersonPojo;
 
 public class EntryActivity extends Activity {
 	
@@ -41,36 +46,52 @@ public class EntryActivity extends Activity {
 	
 	public void register(View v) {
 		Log.d(TAG, "EntryActivity.register");
-		Person p = new Person();
+		String mainClazzName = null, 
+			personClazzName = null, 
+			addressClazzName = null;
+		try {
+			// Find the class to invoke
+			final String PROPS_NAME = "/androidorm.properties";
+			InputStream is = getClass().getResourceAsStream(PROPS_NAME);
+			if (is == null) {
+				die("Project does not include androidorm.properties");
+			}
+			Properties pr = new Properties();
+			pr.load(is);
+			mainClazzName = pr.getProperty("mainActivity");
+			if (mainClazzName == null) {
+				die("mainActivity not set in " + PROPS_NAME);
+			}
+			personClazzName = pr.getProperty("personClass", "domain.pojo.Person");
+			personClazzName = pr.getProperty("addressClass", "domain.pojo.Address");
+			is.close();
+		} catch (IOException e) {
+			die("IO Error trying to read androidorm.properties: " + e);
+		}
+		Person p = null;
+		Address address = null;
+		try {
+			p = (Person) Class.forName(personClazzName).newInstance();
+			address = (Address)Class.forName(addressClazzName).newInstance();
+		} catch (Exception e) {
+			die(e.toString());
+		}
 		p.setFirstName(mFirstName.getText().toString());
 		p.setLastName(mLastName.getText().toString());
 		
 		String street = mStreet.getText().toString();
 		String city = mCity.getText().toString();
 		if (street != null || city != null) {
-			Address address = new Address();
 			address.setStreetAddress(street);
 			address.setCity(city);
 			p.setAddress(address);
 		}
 		// XXX more
 		
-		try {
-			// Find the class to invoke
-			InputStream is = getClass().getResourceAsStream("/androidorm.properties");
-			if (is == null) {
-				String msg = "Project does not include androidorm.properties";
-				Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-				Log.wtf(TAG, msg);
-				System.exit(1);
-			}
-			Properties pr = new Properties();
-			pr.load(is);
-			String clazzName = pr.getProperty("mainActivity");
-			
+		try {	
 			// And pass the filled-in Person to the save handler
-			Intent intent = new Intent(this, Class.forName(clazzName));
-			intent.putExtra("person", p);
+			Intent intent = new Intent(this, Class.forName(mainClazzName));
+			intent.putExtra("person", (Serializable)p);
 			startActivity(intent);
 		} catch (Exception e) {
 			String msg = "Caught exception " + e;
@@ -78,6 +99,13 @@ public class EntryActivity extends Activity {
 			Log.wtf(TAG, msg);
 			System.exit(1);
 		}
+	}
+
+	private void die(String msg) {
+		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+		Log.wtf(TAG, msg);
+		SystemClock.sleep(1000);
+		System.exit(1);
 	}
 
 }
