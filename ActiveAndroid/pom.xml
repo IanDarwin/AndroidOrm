@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example.activeandroid</groupId>
@@ -6,11 +8,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>apk</packaging>
   <name>ActiveAndroid Example</name>
-  <url>http://github.com/IanDarwin/AndroidORM/</url>
+  <url>http://github.com/IanDarwin/AndroidORM</url>
 
-	<properties>
+    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<platform.version>4.1.1.4</platform.version>
+        <java.version>1.7</java.version>
+        <platform.sdk>16</platform.sdk>
+        <platform.version>4.1.1.4</platform.version>
+        <platform.support-version>r7</platform.support-version>
 		<android.plugin.version>3.8.2</android.plugin.version>
 	</properties>
 
@@ -19,6 +24,7 @@
 			<groupId>com.example.androidorm</groupId>
 			<artifactId>common-code</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
+			<type>apklib</type>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -40,6 +46,9 @@
 					<artifactId>android-maven-plugin</artifactId>
 					<version>${android.plugin.version}</version>
 					<extensions>true</extensions>
+					<configuration>
+						<mergeManifests>true</mergeManifests>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -49,8 +58,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -58,7 +67,7 @@
 				<artifactId>android-maven-plugin</artifactId>
 				<configuration>
 					<sdk>
-						<platform>16</platform>
+						<platform>${platform.sdk}</platform>
 					</sdk>
 				</configuration>
 			</plugin>

@@ -28,6 +28,7 @@
 			<groupId>com.example.androidorm</groupId>
 			<artifactId>common-code</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
+			<type>apklib</type>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -44,6 +45,9 @@
 					<artifactId>android-maven-plugin</artifactId>
 					<version>${android.plugin.version}</version>
 					<extensions>true</extensions>
+					<configuration>
+						<mergeManifests>true</mergeManifests>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
