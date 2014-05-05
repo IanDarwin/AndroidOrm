@@ -62,8 +62,8 @@ public class EntryActivity extends Activity {
 			if (mainClazzName == null) {
 				die("mainActivity not set in " + PROPS_NAME);
 			}
-			personClazzName = pr.getProperty("personClass", "domain.pojo.Person");
-			personClazzName = pr.getProperty("addressClass", "domain.pojo.Address");
+			personClazzName = pr.getProperty("personClass", "domain.pojo.PersonPojo");
+			personClazzName = pr.getProperty("addressClass", "domain.pojo.AddressPojo");
 			is.close();
 		} catch (IOException e) {
 			die("IO Error trying to read androidorm.properties: " + e);
