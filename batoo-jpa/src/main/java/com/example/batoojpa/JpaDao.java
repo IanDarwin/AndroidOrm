@@ -15,9 +15,9 @@ import org.batoo.jpa.JPASettings;
 import org.batoo.jpa.core.BatooPersistenceProvider;
 import org.batoo.jpa.jdbc.DDLMode;
 
-import domain.Address;
-import domain.Customer;
-import domain.Person;
+import domain.jpa.AddressJPA;
+import domain.jpa.CustomerJPA;
+import domain.jpa.PersonJPA;
 
 public class JpaDao {
 
@@ -29,22 +29,22 @@ public class JpaDao {
 		// These two steps would be done for you
 		// were you running in an EE App Server.
 		// Or just the EntityManager injected if you were using JavaEE or Spring
-		 Map<String, String> properties = new HashMap<String, String>();
-         properties.put(JPASettings.JDBC_DRIVER, Driver.class.getName());
-         properties.put(JPASettings.JDBC_URL, "jdbc:h2:/data/data/com.example.batoojpa/databases/hello.h2;FILE_LOCK=FS");
-         properties.put(JPASettings.JDBC_USER, "sa");
-         properties.put(JPASettings.JDBC_PASSWORD, "");
-         properties.put(BJPASettings.DDL, DDLMode.DROP.name());
+		Map<String, String> properties = new HashMap<String, String>();
+		properties.put(JPASettings.JDBC_DRIVER, Driver.class.getName());
+		properties.put(JPASettings.JDBC_URL, "jdbc:h2:/data/data/com.example.batoojpa/databases/hello.h2;FILE_LOCK=FS");
+		properties.put(JPASettings.JDBC_USER, "sa");
+		properties.put(JPASettings.JDBC_PASSWORD, "");
+		properties.put(BJPASettings.DDL, DDLMode.DROP.name());
 		entityMgrFactory =  
 			new BatooPersistenceProvider().createEntityManagerFactory("batoo", properties , new String[]{
-                Address.class.getName(),
-                Customer.class.getName(),
-                Person.class.getName(),
+                AddressJPA.class.getName(),
+                CustomerJPA.class.getName(),
+                PersonJPA.class.getName(),
 			});
 		entityManager = entityMgrFactory.createEntityManager();
 	}
 
-	public void savePerson(Person np) {
+	public void savePerson(PersonJPA np) {
 		if (entityMgrFactory == null) {
 			init();
 		}
@@ -61,19 +61,19 @@ public class JpaDao {
 		System.out.println("Created Person with Id " + id);
 	}
 
-	public Person getPersonById(long id) {
+	public PersonJPA getPersonById(long id) {
 		if (entityMgrFactory == null) {
 			init();
 		}
 		
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
-		Person np = entityManager.find(Person.class, id);
+		PersonJPA np = entityManager.find(PersonJPA.class, id);
 		transaction.commit();
 		return np;
 	}
 
-	public List<Person> getAllPersons() {
+	public List<PersonJPA> getAllPersons() {
 		if (entityMgrFactory == null) {
 			init();
 		}
@@ -82,7 +82,7 @@ public class JpaDao {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		@SuppressWarnings("unchecked")
-		List<Person> list = query.getResultList();
+		List<PersonJPA> list = query.getResultList();
 		transaction.commit();
 		return list;
 	}

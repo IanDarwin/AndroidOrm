@@ -1,7 +1,5 @@
 package com.example.jpa;
 
-import com.example.jpa.SavingActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;

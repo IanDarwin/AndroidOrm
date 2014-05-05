@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
-import domain.Person;
+import domain.PersonJPA;
 
 public class SavingActivity extends Activity {
 	final static String TAG = SavingActivity.class.getName();
