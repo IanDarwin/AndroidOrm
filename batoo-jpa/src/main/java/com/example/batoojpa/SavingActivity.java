@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
-import domain.PersonJPA;
+import domain.Person;
+import domain.jpa.PersonJPA;
 
 public class SavingActivity extends Activity {
 	final static String TAG = SavingActivity.class.getName();
@@ -28,8 +30,7 @@ public class SavingActivity extends Activity {
 				dao.savePerson(p);
 				
 				// Fetch this copy of "p" back from the database.
-				// XXX DELETE THIS LINE WHEN DONE - get it by Id, probably!
-				Person q = dao.getPersonById(p.getId());
+				Person q = dao.getPersonById(((PersonJPA) p).getId());
 				
 				String format = getString(R.string.saved);
 				final String toDisplay = String.format(format, q);

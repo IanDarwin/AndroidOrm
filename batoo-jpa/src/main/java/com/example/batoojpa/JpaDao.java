@@ -15,6 +15,7 @@ import org.batoo.jpa.JPASettings;
 import org.batoo.jpa.core.BatooPersistenceProvider;
 import org.batoo.jpa.jdbc.DDLMode;
 
+import domain.Person;
 import domain.jpa.AddressJPA;
 import domain.jpa.CustomerJPA;
 import domain.jpa.PersonJPA;
@@ -44,7 +45,7 @@ public class JpaDao {
 		entityManager = entityMgrFactory.createEntityManager();
 	}
 
-	public void savePerson(PersonJPA np) {
+	public void savePerson(Person np) {
 		if (entityMgrFactory == null) {
 			init();
 		}
@@ -57,7 +58,7 @@ public class JpaDao {
 		entityManager.persist(np);
 		transaction.commit();
 
-		long id = np.getId();
+		long id = ((PersonJPA)np).getId();
 		System.out.println("Created Person with Id " + id);
 	}
 
