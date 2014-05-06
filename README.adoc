@@ -12,20 +12,32 @@ The first half of each project is in CommonCode, which provides JPA-annotated en
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
 "save the Person to sqlite" action, and display "success". 
 
-=== What We Sought
+=== Technologies
 
-We started this looking for a "small, simple, lightweight but powerful" (everybody's
-favorite conflicting needs, right) Java ORM for Android. We would settle on an 
-ActiveRecord implementation if it otherwise me the criteria. As a bare minimum 
+The following is a table of Android ORM technologies (to be) tried:
+
+include::Table.adoc[]
+
+=== Research Goals
+
+I started this looking for a "small, simple, lightweight but powerful" (everybody's
+favorite conflicting needs, right) Java ORM for Android. Would settle on an 
+ActiveRecord implementation if it otherwise met the criteria. As a bare minimum 
 whatever we chose had to support relationships (Person" has-a
 Address) and at least one level of inheritance ("Customer is-a
 Person"; ideally, "save this object without being told which it is").
 
-=== TO BUILD A NEW DEMO:
+=== To Add A New Technology
+
+The goal is to use a singular main activity (++EntryActivity++), and have it pass control 
+to a tech-specific ++SaveActivity++ to save the Person.
+Because of difficulties using a single Person class, Person became an Interface.
+The implementation name of the +SaveActivity+ as well as any domain-specific Domain implementatiions
+must be listed in the _androidorm.properties_ file; see the examples.
 
 The Main activity's class name must be listed in your AndroidManifest,
 and the target-specific "save and display" must be listed in a Java Properties
-file. See TemplateReceiver for example. In more detail:
+file. In more detail:
 
 . Clone this entire project if you didn't already.
 . copy the entire TemplateReceiver project to a new project, named after
@@ -55,7 +67,3 @@ and depend on it (batoo-jpa is done this way).
 
 When it works, commit it, and send me a pull request!
 
-=== Technologies
-
-.Table of Android ORM technologies (to be) tried
-include::Table.adoc[]
