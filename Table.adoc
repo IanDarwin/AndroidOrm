@@ -1,0 +1,18 @@
+[options="header"]
+|===========
+| Technology		| URL  | Type | JPA Annot? | DB Tech  | Notes |
+| ActiveAndroid		| http://www.activeandroid.com/ | Active Record | Note 1| SQLite | |
+| AndroidRecord		| https://github.com/lyudmil/androidrecord | Active Record | | | Inactive |
+| Batoo JPA			| https://github.com/BatooOrg/HelloAndroid | JPA, Batoo Provider | Y | HSQL database |Inactive | 
+| db4o 				| https://db4o.org | Object DB | N | Self-contained OODB | Inactive|
+| greenDAO			| http://greendao-orm.com/ | ? | ? | ?| |
+| Gwenn SQLite		| https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A | | |
+| Hibernate			| http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect |  |
+| Jpa-hibernate		| n/a | ORM | Y | JPA with Hibernate and Gwenn |  |
+| ORMLite			| http://ormlite.com | ORM | Y | Supports JDBC, Android | custom | 
+| Sugar ORM			| http://satyan.github.io/sugar/ | Active Record | ? |  | |
+| Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a | |
+|===========
+
+1. ActiveAndroid has its own annotations with conflicting names: @Table, @Column
+You could have both present but can't +import+ both, so you would have to write e.g., ++@com.activeandroid.annotation.Column++.
