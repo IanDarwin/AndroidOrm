@@ -40,7 +40,7 @@ and the target-specific "save and display" must be listed in a Java Properties
 file. In more detail:
 
 . Clone this entire project if you didn't already.
-. copy the entire TemplateReceiver project to a new project, named after
+. copy the entire TemplateTech project to a new project, named after
 			your technology (use the names below if implementing one of these?).
 . UPDATE THE README FILE to give an idea what it's about
 . Change the package name from "templatereceiver" to your ORM's name (lower case)
@@ -57,7 +57,7 @@ please respect the overall structure that is set up here.
 Please DO NOT:
 
 . Go changing any other config files; Android build is kinda sensitive to changes,
-and we have it working such that TemplateReceiver's main activity is coming from the
+and we have it working such that TemplateTech's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
 . Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
 
