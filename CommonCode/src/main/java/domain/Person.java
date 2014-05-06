@@ -4,18 +4,21 @@ import java.io.Serializable;
 
 public interface Person extends Serializable {
 
-	public abstract String getLastName();
+	public String getLastName();
 
-	public abstract String getName();
+	/** getName must return getFirstName(), space, getLastName() */
+	public String getName();
 
-	public abstract String getFirstName();
+	public String getFirstName();
 
-	public abstract void setFirstName(String firstName);
+	public void setFirstName(String firstName);
 
-	public abstract void setLastName(String lastName);
+	public void setLastName(String lastName);
 
-	public abstract Address getAddress();
+	public Address getAddress();
 
-	public abstract void setAddress(Address address);
+	public void setAddress(Address address);
 
+	/** toString is required; it must present the class.simpleName, getName(), and getAddress() */
+	public String toString();
 }
