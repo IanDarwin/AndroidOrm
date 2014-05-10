@@ -1,17 +1,13 @@
 package com.example.ormlite;
 
-import java.util.List;
-import java.util.Random;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import domain.Person;
-import domain.ormlite.PersonOL;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
+
+import domain.ormlite.PersonOL;
 
 /**
  * Save a Person and display it again
