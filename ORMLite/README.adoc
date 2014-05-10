@@ -1,0 +1,4 @@
+This is a SaveActivity application that demonstrates use of ORMLite. 
+
+For more information, see the online documentation on the 
+project page http://ormlite.com/.
