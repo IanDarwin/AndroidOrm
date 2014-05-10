@@ -31,8 +31,7 @@ public class SavingActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		final PersonOL p = (PersonOL) getIntent().getSerializableExtra("person");
 
 		// get our dao
-		RuntimeExceptionDao<PersonOL, Integer> sampleDao = 
-			getHelper().getPersonDao();
+		RuntimeExceptionDao<PersonOL, Integer> sampleDao = getHelper().getPersonDao();
 
 		// Save Person in database
 		sampleDao.create(p);

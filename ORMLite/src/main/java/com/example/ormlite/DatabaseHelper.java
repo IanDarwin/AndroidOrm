@@ -26,16 +26,15 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// the DAO object we use to access the SimpleData table
-	private Dao<PersonOL, Integer> simpleDao = null;
-	private RuntimeExceptionDao<PersonOL, Integer> simpleRuntimeDao = null;
+	private RuntimeExceptionDao<PersonOL, Integer> simpleDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
 	}
 
 	/**
-	 * This is called when the database is first created. Usually you should call createTable statements here to create
-	 * the tables that will store your data.
+	 * This is called when the database is first created. Usually you should call createTable 
+	 * statements here to create the tables that will store your data.
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
@@ -59,23 +58,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	/**
 	 * Returns the Database Access Object (DAO) for our SimpleData class. 
+	 * Actually returns a RuntimeExceptionDao which maps Exceptions to RuntimeExceptions.
 	 */
-	public Dao<PersonOL, Integer> getDao() throws SQLException {
+	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() throws SQLException {
 		if (simpleDao == null) {
-			simpleDao = getDao(PersonOL.class);
+			simpleDao = getRuntimeExceptionDao(PersonOL.class);
 		}
 		return simpleDao;
-	}
-
-	/**
-	 * Returns the RuntimeExceptionDao version of a Dao for our SimpleData class.
-	 * RuntimeExceptionDao only throws RuntimeExceptions.
-	 */
-	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() {
-		if (simpleRuntimeDao == null) {
-			simpleRuntimeDao = getRuntimeExceptionDao(PersonOL.class);
-		}
-		return simpleRuntimeDao;
 	}
 
 	/**
@@ -85,6 +74,5 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void close() {
 		super.close();
 		simpleDao = null;
-		simpleRuntimeDao = null;
 	}
 }
