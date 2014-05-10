@@ -1,14 +1,54 @@
-package com.example.ormlite;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+package com.example.ormlite.domain;
 
 import com.j256.ormlite.field.DatabaseField;
+
+import domain.Address;
+import domain.Person;
 
 /**
  * ORMLite implementation of Person 
  */
 public class PersonOL implements Person{
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
 
 	/** Primary key - generated */
 	@DatabaseField(generatedId = true)
@@ -33,5 +73,17 @@ public class PersonOL implements Person{
 			.append(firstName).append(" ").append(lastName)
 			.append(", ").append(address);
 		return sb.toString();
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAddress(Address address) {
+		// TODO Auto-generated method stub
+		
 	}
 }
