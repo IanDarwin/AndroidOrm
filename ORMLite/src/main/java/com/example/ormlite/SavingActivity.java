@@ -5,8 +5,8 @@ import java.util.Random;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
-
 import domain.Person;
 import domain.PersonOL;
 
@@ -28,19 +28,19 @@ public class SavingActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		Log.i(TAG, "SavingActivity.onCreate()");
 		setContentView(R.layout.activity_saving);
 		message = (TextView) findViewById(R.id.saved);
-		final Person p = (Person) getIntent().getSerializableExtra("person");
+		final PersonOL p = (PersonOL) getIntent().getSerializableExtra("person");
 
 		// get our dao
-		RuntimeExceptionDao<Person, Integer> sampleDao = 
-			getHelper().getSimpleDataDao();
+		RuntimeExceptionDao<PersonOL, Integer> sampleDao = 
+			getHelper().getPersonDao();
 
 		// Save Person in database
 		sampleDao.create(p);
 
 		Log.d(TAG, "Created Person " + ((PersonOL)p).getId());
 
-		Person p = sampleDao.find(p.id);
+		Person p2 = sampleDao.find(((PersonOL) p).getId());
 
-		message.setText("Saved Person " + p);
+		message.setText("Saved Person " + p2);
 	}
 }

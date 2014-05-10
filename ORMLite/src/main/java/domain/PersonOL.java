@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 
 import domain.Address;
 import domain.Person;
+import domain.pojo.AddressPojo;
 
 /**
  * ORMLite implementation of Person 
@@ -34,7 +35,9 @@ public class PersonOL implements Person{
 		this.lastName = lastName;
 	}
 
-	public String getAddress() {
+	public Address getAddress() {
+		AddressPojo address = new AddressPojo();
+		address.setStreetAddress(this.address);
 		return address;
 	}
 

@@ -12,6 +12,8 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
+import domain.PersonOL;
+
 /**
  * Database helper class used to manage the creation and upgrading of your database. 
  * This class also usually provides the DAOs used by the other classes.
@@ -39,7 +41,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
 		try {
 			Log.i(DatabaseHelper.class.getName(), "onCreate");
-			TableUtils.createTable(connectionSource, SimpleData.class);
+			TableUtils.createTable(connectionSource, PersonOL.class);
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
 			throw new RuntimeException(e);
@@ -53,7 +55,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 		throw new RuntimeException("No versions; upgrade code not written yet");
-		}
 	}
 
 	/**
@@ -62,7 +63,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 */
 	public Dao<PersonOL, Integer> getDao() throws SQLException {
 		if (simpleDao == null) {
-			simpleDao = getDao(SimpleData.class);
+			simpleDao = getDao(PersonOL.class);
 		}
 		return simpleDao;
 	}
@@ -71,9 +72,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the RuntimeExceptionDao (Database Access Object) version of a Dao for our SimpleData class. It will
 	 * create it or just give the cached value. RuntimeExceptionDao only through RuntimeExceptions.
 	 */
-	public RuntimeExceptionDao<SimpleData, Integer> getSimpleDataDao() {
+	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() {
 		if (simpleRuntimeDao == null) {
-			simpleRuntimeDao = getRuntimeExceptionDao(SimpleData.class);
+			simpleRuntimeDao = getRuntimeExceptionDao(PersonOL.class);
 		}
 		return simpleRuntimeDao;
 	}
