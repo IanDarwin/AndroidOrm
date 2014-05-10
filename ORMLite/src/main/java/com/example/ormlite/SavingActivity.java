@@ -37,7 +37,7 @@ public class SavingActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		// Save Person in database
 		sampleDao.create(p);
 
-		Log.d(TAG, "Created Person " + p.id);
+		Log.d(TAG, "Created Person " + ((PersonOL)p).getId());
 
 		Person p = sampleDao.find(p.id);
 

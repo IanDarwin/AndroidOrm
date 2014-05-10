@@ -19,13 +19,13 @@ import com.j256.ormlite.table.TableUtils;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	// name of the database file for your application -- change to something appropriate for your app
-	private static final String DATABASE_NAME = "helloAndroid.db";
+	private static final String DATABASE_NAME = "ormlite.db";
 	// any time you make changes to your database objects, you may have to increase the database version
 	private static final int DATABASE_VERSION = 1;
 
 	// the DAO object we use to access the SimpleData table
-	private Dao<SimpleData, Integer> simpleDao = null;
-	private RuntimeExceptionDao<SimpleData, Integer> simpleRuntimeDao = null;
+	private Dao<PersonOL, Integer> simpleDao = null;
+	private RuntimeExceptionDao<PersonOL, Integer> simpleRuntimeDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
@@ -44,16 +44,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
 			throw new RuntimeException(e);
 		}
-
-		// here we try inserting data in the on-create as a test
-		RuntimeExceptionDao<SimpleData, Integer> dao = getSimpleDataDao();
-		long millis = System.currentTimeMillis();
-		// create some entries in the onCreate
-		SimpleData simple = new SimpleData(millis);
-		dao.create(simple);
-		simple = new SimpleData(millis + 1);
-		dao.create(simple);
-		Log.i(DatabaseHelper.class.getName(), "created new entries in onCreate: " + millis);
 	}
 
 	/**
@@ -62,14 +52,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 */
 	@Override
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
-		try {
-			Log.i(DatabaseHelper.class.getName(), "onUpgrade");
-			TableUtils.dropTable(connectionSource, SimpleData.class, true);
-			// after we drop the old databases, we create the new ones
-			onCreate(db, connectionSource);
-		} catch (SQLException e) {
-			Log.e(DatabaseHelper.class.getName(), "Can't drop databases", e);
-			throw new RuntimeException(e);
+		throw new RuntimeException("No versions; upgrade code not written yet");
 		}
 	}
 
@@ -77,7 +60,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the Database Access Object (DAO) for our SimpleData class. It will create it or just give the cached
 	 * value.
 	 */
-	public Dao<SimpleData, Integer> getDao() throws SQLException {
+	public Dao<PersonOL, Integer> getDao() throws SQLException {
 		if (simpleDao == null) {
 			simpleDao = getDao(SimpleData.class);
 		}
