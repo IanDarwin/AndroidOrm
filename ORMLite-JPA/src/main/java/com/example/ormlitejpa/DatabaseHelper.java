@@ -11,7 +11,7 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-import domain.ormlite.PersonOL;
+import domain.jpa.PersonJPA;
 
 /**
  * Database helper class used to manage the creation and upgrading of your database. 
@@ -25,7 +25,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// the DAO object we use to access the SimpleData table
-	private RuntimeExceptionDao<PersonOL, Integer> simpleDao = null;
+	private RuntimeExceptionDao<PersonJPA, Integer> simpleDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
@@ -39,7 +39,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
 		try {
 			Log.i(DatabaseHelper.class.getName(), "onCreate");
-			TableUtils.createTable(connectionSource, PersonOL.class);
+			TableUtils.createTable(connectionSource, PersonJPA.class);
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
 			throw new RuntimeException(e);
@@ -59,9 +59,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the Database Access Object (DAO) for our SimpleData class. 
 	 * Actually returns a RuntimeExceptionDao which maps Exceptions to RuntimeExceptions.
 	 */
-	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() {
+	public RuntimeExceptionDao<PersonJPA, Integer> getPersonDao() {
 		if (simpleDao == null) {
-			simpleDao = getRuntimeExceptionDao(PersonOL.class);
+			simpleDao = getRuntimeExceptionDao(PersonJPA.class);
 		}
 		return simpleDao;
 	}
