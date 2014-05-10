@@ -11,7 +11,7 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-import domain.PersonOL;
+import domain.ormlite.PersonOL;
 
 /**
  * Database helper class used to manage the creation and upgrading of your database. 

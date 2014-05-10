@@ -1,8 +1,9 @@
-package domain;
+package domain.ormlite;
 
 import com.j256.ormlite.field.DatabaseField;
 
 import domain.Address;
+import domain.Country;
 import domain.Person;
 import domain.pojo.AddressPojo;
 
