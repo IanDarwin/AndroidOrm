@@ -1,27 +1,3 @@
 #
-# generated on 2012/06/06 05:55:57
+# generated on 2014/05/10 05:40:39
 #
-# --table-start--
-dataClass=com.example.helloandroid.SimpleData
-tableName=simpledata
-# --table-fields-start--
-# --field-start--
-fieldName=id
-generatedId=true
-# --field-end--
-# --field-start--
-fieldName=string
-indexName=simpledata_string_idx
-# --field-end--
-# --field-start--
-fieldName=millis
-# --field-end--
-# --field-start--
-fieldName=date
-# --field-end--
-# --field-start--
-fieldName=even
-# --field-end--
-# --table-fields-end--
-# --table-end--
-#################################
