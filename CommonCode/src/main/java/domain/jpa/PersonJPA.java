@@ -2,6 +2,7 @@ package domain.jpa;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +20,15 @@ import domain.Person;
 public class PersonJPA implements Serializable, Person {
 
 	private static final long serialVersionUID = 6204749922868486719L;
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
+	@Column
 	protected String firstName;
+	@Column
 	protected String lastName;
+	@Column
 	protected Address address;
+	@Version
 	int version;
 	
 	public PersonJPA() {
@@ -41,7 +47,6 @@ public class PersonJPA implements Serializable, Person {
 				(getAddress() != null ? getAddress() : "");
 	}
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}

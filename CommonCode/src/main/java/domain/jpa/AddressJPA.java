@@ -2,6 +2,7 @@ package domain.jpa;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,10 +16,14 @@ public class AddressJPA implements Serializable, Address {
 
 	private static final long serialVersionUID = -3488970592612474703L;
 
+	@Id
 	private int id;
 	
+	@Column
 	private String streetAddress;
+	@Column
 	private String city;
+	@Column
 	private Country country = Country.CANADA;
 
 	/* (non-Javadoc)
