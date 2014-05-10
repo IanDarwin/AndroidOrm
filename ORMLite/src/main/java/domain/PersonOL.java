@@ -1,4 +1,4 @@
-package com.example.ormlite.domain;
+package domain;
 
 import com.j256.ormlite.field.DatabaseField;
 
