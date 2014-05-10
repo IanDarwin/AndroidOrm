@@ -10,6 +10,22 @@ import domain.pojo.AddressPojo;
  * ORMLite implementation of Person 
  */
 public class PersonOL implements Person{
+	
+	/** Primary key - generated */
+	@DatabaseField(generatedId = true)
+	int id;
+	@DatabaseField(index = true)
+	String firstName;
+	@DatabaseField
+	String lastName;
+	@DatabaseField
+	String address;	// XXX relationships?
+	@DatabaseField
+	Country country;
+	
+	public PersonOL() {
+		
+	}
 
 	public int getId() {
 		return id;
@@ -51,22 +67,6 @@ public class PersonOL implements Person{
 
 	public void setCountry(Country country) {
 		this.country = country;
-	}
-
-	/** Primary key - generated */
-	@DatabaseField(generatedId = true)
-	int id;
-	@DatabaseField(index = true)
-	String firstName;
-	@DatabaseField
-	String lastName;
-	@DatabaseField
-	String address;	// XXX relationships?
-	@DatabaseField
-	Country country;
-
-	PersonOL() {
-		// needed by ormlite
 	}
 
 	@Override
