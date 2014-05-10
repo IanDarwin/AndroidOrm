@@ -38,7 +38,7 @@ public class SavingActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 		Log.d(TAG, "Created Person " + ((PersonOL)p).getId());
 
-		PersonOL p2 = sampleDao.find(((PersonOL) p).getId());
+		PersonOL p2 = sampleDao.queryForId(((PersonOL) p).getId());
 
 		message.setText("Saved Person " + p2);
 	}

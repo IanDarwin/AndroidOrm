@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
-import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
@@ -60,7 +59,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Returns the Database Access Object (DAO) for our SimpleData class. 
 	 * Actually returns a RuntimeExceptionDao which maps Exceptions to RuntimeExceptions.
 	 */
-	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() throws SQLException {
+	public RuntimeExceptionDao<PersonOL, Integer> getPersonDao() {
 		if (simpleDao == null) {
 			simpleDao = getRuntimeExceptionDao(PersonOL.class);
 		}
