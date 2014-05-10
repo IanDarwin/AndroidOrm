@@ -13,8 +13,8 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 /**
- * Database helper class used to manage the creation and upgrading of your database. This class also usually provides
- * the DAOs used by the other classes.
+ * Database helper class used to manage the creation and upgrading of your database. 
+ * This class also usually provides the DAOs used by the other classes.
  */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
