@@ -6,7 +6,7 @@
 | AndrORM			| http://www.androrm.com/ | ? | None | | | 2011-178-2014 |
 | AndroidRecord		| https://github.com/lyudmil/androidrecord | Active Record | | | | 2012-63-2013 |
 | Batoo JPA			| https://github.com/BatooOrg/HelloAndroid | JPA, Batoo Provider | Y | HSQL database | | 2012-4-2013 |
-| db4o 				| https://db4o.org | Object DB | N | Self-contained OODB | Inactive| ?-?-? |
+| db4o 				| https://db4o.org | Object DB | N | Self-contained OODB | Note 3| ?-?-? |
 | greenDAO			| http://greendao-orm.com/ | ? | ? | ?| | ?-?-? |
 | Gwenn SQLite		| https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A | | | ?-?-? |
 | Hibernate			| http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect |  | ?-?-? |
@@ -23,4 +23,11 @@ Please check up-to-date numbers on the project's source code page,
 and make your own comparison before settling among the top few projects that interest you.
 
 2. ActiveAndroid has its own annotations with conflicting names: @Table, @Column
-You could have both present but can't +import+ both, so you would have to write e.g., ++@com.activeandroid.annotation.Column++.
+You could have both present but can't +import+ both, so you would have to write e.g.,
+++@com.activeandroid.annotation.Column++.
+
+3. db4o was acquired by Versant, which seems to prefer its own technology; db4o has not had much
+by way of updates since. However, the download (from http://community.versant.com/Downloads/db4o.aspx)
+includes the entire source code - 4.0 is a 40Mb download! They do not appear to offer a public
+source code repository.
+
