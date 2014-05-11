@@ -6,10 +6,10 @@
 | AndrORM			| http://www.androrm.com/ | ? | None | | | 2011-178-2014 |
 | AndroidRecord		| https://github.com/lyudmil/androidrecord | Active Record | | | | 2012-63-2013 |
 | Batoo JPA			| https://github.com/BatooOrg/HelloAndroid | JPA, Batoo Provider | Y | HSQL database | | 2012-4-2013 |
-| db4o 				| https://db4o.org | Object DB | N | Self-contained OODB | Note 3| ?-?-? |
+| db4o 				| https://db4o.org | Object DB | N | OODB Object DB | Note 3| ?-?-? |
 | greenDAO			| http://greendao-orm.com/ | ? | ? | ?| | ?-?-? |
 | Gwenn SQLite		| https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A | | | ?-?-? |
-| Hibernate			| http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect |  | ?-?-? |
+| Hibernate			| http://hibernate.org | ORM | Y | with Gwenn SQLite dialect |  | ?-?-? |
 | Jpa-hibernate		| n/a | ORM | Y | JPA with Hibernate and Gwenn |  | ?-?-? |
 | ORMAN				| https://github.com/ahmetalpbalkan/orman | ? | JPA-like | | | 2011-154-2013 |
 | ORMLite			| http://ormlite.com | ORM | Y | Supports JDBC, Android | custom |  2010-1505-2014 |
