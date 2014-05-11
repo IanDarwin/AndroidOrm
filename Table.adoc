@@ -17,7 +17,7 @@
 | Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a | | ?-?-? |
 |===========
 
-1. Numbers showns are the year the first commit (where known), the number of commits, and the year of the most recent commit to the source code, so you can judge the project's maturity and its activity, both important when choosing to use a software project.
+1. Numbers shown are the year the first commit (where known), the number of commits, and the year of the most recent commit to the source code, so you can judge the project's maturity and its activity, both important when choosing to use a software project.
 Numbers may be inaccurate or out-of-date, and may not reflect commits before the project moved to public hosting.
 Please check up-to-date numbers on the project's source code page,
 and make your own comparison before settling among the top few projects that interest you.
