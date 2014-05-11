@@ -1,7 +1,7 @@
 [options="header"]
 |===========
 // TODO add columns for license, where (And/SE/EE), year(start/lastcommit)
-| Technology		| URL  | Type | JPA Annot? | DB Tech  | Notes | Active(1)
+| Technology		| URL  | Type | JPA Annot? | DB Tech  | Notes | Active(1) |
 | ActiveAndroid		| http://www.activeandroid.com/ | Active Record | Note 2| SQLite | | ?-?-? |
 | AndrORM			| http://www.androrm.com/ | ? | None | | | 2011-178-2014 |
 | AndroidRecord		| https://github.com/lyudmil/androidrecord | Active Record | | | | 2012-63-2013 |
