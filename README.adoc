@@ -3,7 +3,7 @@
 This is the example project(s) for my http://andevcon.com[AnDevCon 2014] talk on 
 http://tsn2.bzmedia.com/tradeshows/classinfo.aspx?id=19446&showid=34[_not_ using Content Providers].
 
-Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So we undertook this little study.
+Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So I undertook this little study.
 
 The goal is to save a "Person" object, which may be a subclass called Customer, and may or may not have an Address object associated with it, and read it back in again.
 
@@ -23,16 +23,16 @@ include::Table.adoc[]
 I started this looking for a "small, simple, lightweight but powerful" (everybody's
 favorite conflicting needs, right) Java ORM for Android. Would settle on an 
 ActiveRecord implementation if it otherwise met the criteria. As a bare minimum 
-whatever we chose had to support relationships (Person" has-a
+it would have to support relationships (Person" has-a
 Address) and at least one level of inheritance ("Customer is-a
 Person"; ideally, "save this object without being told which it is").
 
-=== To Add A New Technology
+=== To Add A New Technology Demo
 
 The goal is to use a singular main activity (++EntryActivity++), and have it pass control 
-to a tech-specific ++SaveActivity++ to save the Person.
+to a tech-specific ++SavingActivity++ to save the Person.
 Because of difficulties using a single Person class, Person became an Interface.
-The implementation name of the +SaveActivity+ as well as any domain-specific Domain implementatiions
+The implementation name of the +SavingActivity+ as well as any domain-specific Domain implementatiions
 must be listed in the _androidorm.properties_ file; see the examples.
 
 The Main activity's class name must be listed in your AndroidManifest,
