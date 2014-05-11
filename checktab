@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# check the number of columns in each line of the table
+
+awk -F\| '/^\|/ {print NR, NF}' Table.adoc
