@@ -14,7 +14,7 @@ object on to an ORM-specific SavingActivity, which is expected to do the technol
 
 === Technologies
 
-The following is a table of Android ORM technologies (to be) tried:
+Here is the list of Android ORM technologies found so far:
 
 include::Table.adoc[]
 
