@@ -1,1 +1,6 @@
 Sqlite needs query implementation
+
+Several more implementations would be lovely.
+
+A Query feature (with a Search Box on the EntryActivity calling a platform-specific module,
+if the search class were listed in the androidorm.properties file) would be truly lovely. 
