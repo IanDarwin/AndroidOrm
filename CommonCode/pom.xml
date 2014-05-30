@@ -6,7 +6,7 @@
 	<groupId>com.example.androidorm</groupId>
 	<artifactId>common-code</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
-	<packaging>apklib</packaging>
+	<packaging>aar</packaging>
 
 	<name>Common Code (Activity and Data Model) for ORM study.</name>
 	<url>http://github.com/IanDarwin/androidorm/</url>
@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform.version>4.1.1.4</platform.version>
-		<android.plugin.version>3.8.2</android.plugin.version>
+		<android.plugin.version>3.9.0-rc.2</android.plugin.version>
 	</properties>
 
 	<dependencies>
