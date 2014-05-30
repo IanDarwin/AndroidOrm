@@ -13,6 +13,7 @@
 | Jpa-hibernate		| n/a | ORM | Y | JPA with Hibernate and Gwenn |  | ?-?-? |
 | ORMAN				| https://github.com/ahmetalpbalkan/orman | ? | JPA-like | | | 2011-154-2013 |
 | ORMLite			| http://ormlite.com | ORM | Y | Supports JDBC, Android | custom |  2010-1505-2014 |
+| Storm-Gen			| https://github.com/turbomanage/storm-gen | DAO Gen | ? | sqlite | - | Y |
 | Sugar ORM			| http://satyan.github.io/sugar/ | Active Record | ? |  | | ?-?-? |
 | Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a | | ?-?-? |
 |===========
