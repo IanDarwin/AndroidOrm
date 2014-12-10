@@ -1,41 +1,27 @@
-package domain.jpa;
+package domain.stormgen;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
-import javax.persistence.Version;
+import com.turbomanage.storm.api.Entity;
+import com.turbomanage.storm.api.Id;
 
 import domain.Address;
 import domain.Person;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-public class PersonJPA implements Serializable, Person {
+public class PersonSG implements Person {
 
-	private static final long serialVersionUID = 6204749922868486719L;
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	long id;
-	@Column
-	protected String firstName;
-	@Column
-	protected String lastName;
-	@Column
-	protected Address address;
-	@Version
-	int version;
+	private static final long serialVersionUID = 6204749922868486715L;
+	private String firstName;
+	private String lastName;
+	private Address address;
+
+	@Id
+	int id;
 	
-	public PersonJPA() {
+	public PersonSG() {
 		// empty
 	}
 	
-	public PersonJPA(String firstName, String lastName) {
+	public PersonSG(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -45,23 +31,6 @@ public class PersonJPA implements Serializable, Person {
 	public String toString() {
 		return getClass().getSimpleName() + ": '" +getName() + "'" +
 				(getAddress() != null ? getAddress() : "");
-	}
-	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	@Version
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 	/* (non-Javadoc)
@@ -74,9 +43,9 @@ public class PersonJPA implements Serializable, Person {
 	
 	/* (non-Javadoc)
 	 * @see domain.Person#getName()
+	 * In Java 8 this can become a "default" method in the Person interface
 	 */
 	@Override
-	@Transient /* synthetic: cannot be used in JPA queries, alas. */
 	public String getName() {
 		StringBuilder sb = new StringBuilder();
 		if (firstName != null)
@@ -119,7 +88,7 @@ public class PersonJPA implements Serializable, Person {
 	}
 
 	/* (non-Javadoc)
-	 * @see domain.Person#setAddress(domain.AddressJPA)
+	 * @see domain.Person#setAddress(domain.Address)
 	 */
 	@Override
 	public void setAddress(Address address) {
@@ -145,7 +114,7 @@ public class PersonJPA implements Serializable, Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		final PersonJPA other = (PersonJPA) obj;
+		final PersonSG other = (PersonSG) obj;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;

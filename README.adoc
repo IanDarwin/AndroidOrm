@@ -3,7 +3,7 @@
 This is the example project(s) for my http://andevcon.com[AnDevCon 2014] talk on 
 http://tsn2.bzmedia.com/tradeshows/classinfo.aspx?id=19446&showid=34[_not_ using Content Providers].
 
-Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So we undertook this little study.
+Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So I undertook this little study.
 
 The goal is to save a "Person" object, which may be a subclass called Customer, and may or may not have an Address object associated with it, and read it back in again.
 
@@ -12,24 +12,36 @@ The first half of each project is in CommonCode, which provides JPA-annotated en
 object on to an ORM-specific SavingActivity, which is expected to do the technology-specific
 "save the Person to sqlite" action, and display "success". 
 
-=== What We Sought
+=== Technologies
 
-We started this looking for a "small, simple, lightweight but powerful" (everybody's
-favorite conflicting needs, right) Java ORM for Android. We would settle on an 
-ActiveRecord implementation if it otherwise me the criteria. As a bare minimum 
-whatever we chose had to support relationships (Person" has-a
+Here is the list of Android ORM technologies found so far:
+
+include::Table.adoc[]
+
+=== Research Goals
+
+I started this looking for a "small, simple, lightweight but powerful" (everybody's
+favorite conflicting needs, right) Java ORM for Android. Would settle on an 
+ActiveRecord implementation if it otherwise met the criteria. As a bare minimum 
+it would have to support relationships (Person" has-a
 Address) and at least one level of inheritance ("Customer is-a
 Person"; ideally, "save this object without being told which it is").
 
-=== TO BUILD A NEW DEMO:
+=== To Add A New Technology Demo
+
+The goal is to use a singular main activity (++EntryActivity++), and have it pass control 
+to a tech-specific ++SavingActivity++ to save the Person.
+Because of difficulties using a single Person class, Person became an Interface.
+The implementation name of the +SavingActivity+ as well as any domain-specific Domain implementatiions
+must be listed in the _androidorm.properties_ file; see the examples.
 
 The Main activity's class name must be listed in your AndroidManifest,
 and the target-specific "save and display" must be listed in a Java Properties
-file. See TemplateReceiver for example. In more detail:
+file. In more detail:
 
 . Clone this entire project if you didn't already.
-. copy the entire TemplateReceiver project to a new project, named after
-   your technology (use the names below if implementing one of these?).
+. copy the entire TemplateTech project to a new project, named after
+			your technology (use the names below if implementing one of these?).
 . UPDATE THE README FILE to give an idea what it's about
 . Change the package name from "templatereceiver" to your ORM's name (lower case)
 . Make the corresponding change in androidorm.properties
@@ -45,7 +57,7 @@ please respect the overall structure that is set up here.
 Please DO NOT:
 
 . Go changing any other config files; Android build is kinda sensitive to changes,
-and we have it working such that TemplateReceiver's main activity is coming from the
+and we have it working such that TemplateTech's main activity is coming from the
 library project, it passes control to SavingActivity, and it "just works" as it stands.
 . Tart up the UI in SavingActivity; it's just a POC, don't waste your time on frills.
 
@@ -55,19 +67,3 @@ and depend on it (batoo-jpa is done this way).
 
 When it works, commit it, and send me a pull request!
 
-=== Technologies
-
-.Table of Android ORM technologies (to be) tried
-[options="header"]
-|===========
-| Technology         | URL  | Type | JPA Annot? | Tech  | Notes |
-| AndroidRecord      | http://www.activeandroid.com/ | Active Record | ?| |   |
-| Batoo JPA          | https://github.com/BatooOrg/HelloAndroid | JPA, Batoo Provider | Y | HSQL database | | 
-| greenDAO           | http://greendao-orm.com/ | ? | ? | ?| |
-| Gwenn SQLite       | https://github.com/gwenn/sqlite-dialect/ | Hibernate dialect for SQLite | N/A | | |
-| Hibernate          | http://hibernate.org | ORM | Y | with Gwenn SQLite-dialect |  |
-| Jpa-hibernate      | n/a | ORM | Y | JPA with Hibernate and Gwenn |  |
-| ORMLite            | ormlite.com | ORM | Y | Supports JDBC, Android | custom | 
-| Sugar ORM          | http://satyan.github.io/sugar/ | Active Record | ? |  | |
-| Xerial JDBC-Driver | http://code.google.com/p/xerial/ | JDBC-SQLite| n/a | n/a | |
-|===========

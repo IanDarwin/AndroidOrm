@@ -3,12 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example.activeandroid</groupId>
-  <artifactId>activeandroid</artifactId>
+  <groupId>com.example.TEMPLATE</groupId>
+  <artifactId>TEMPLATE</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>TEMPLATE Example</name>
   <packaging>apk</packaging>
-  <name>ActiveAndroid Example</name>
   <url>http://github.com/IanDarwin/AndroidORM</url>
+
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,10 +17,13 @@
         <platform.sdk>16</platform.sdk>
         <platform.version>4.1.1.4</platform.version>
         <platform.support-version>r7</platform.support-version>
-		<android.plugin.version>3.9.0-rc.2</android.plugin.version>
+		<android.plugin.version>3.8.2</android.plugin.version>
 	</properties>
 
 	<dependencies>
+
+		<!-- List your app-specific dependencies here -->
+
 		<dependency>
 			<groupId>com.example.androidorm</groupId>
 			<artifactId>common-code</artifactId>
@@ -31,11 +35,6 @@
 			<artifactId>android</artifactId>
 			<version>${platform.version}</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.activeandroid</groupId>
-			<artifactId>activeandroid</artifactId>
-			<version>3.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
   <build>

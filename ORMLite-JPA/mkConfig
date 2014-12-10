@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -x
+
+java -classpath bin/classes:\
+../CommonCode/bin/classes/:\
+libs/ormlite-core-4.43.jar:\
+libs/ormlite-android-4.43.jar:\
+$HOME/android-sdk-macosx/platforms/android-19/android.jar:\
+	 com.example.ormlite.DatabaseConfigUtil

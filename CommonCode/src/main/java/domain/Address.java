@@ -2,7 +2,7 @@ package domain;
 
 import java.io.Serializable;
 
-public interface Address extends Serializable{
+public interface Address extends Serializable {
 
 	public abstract String getCity();
 

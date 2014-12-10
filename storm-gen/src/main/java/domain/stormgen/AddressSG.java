@@ -1,29 +1,20 @@
-package domain.jpa;
+package domain.stormgen;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.turbomanage.storm.api.Entity;
 
 import domain.Address;
 import domain.Country;
+import domain.pojo.PersonPojo;
 
 @Entity
-public class AddressJPA implements Serializable, Address {
+public class AddressSG extends PersonPojo implements Serializable, Address {
 
-	private static final long serialVersionUID = -3488970592612474703L;
+	private static final long serialVersionUID = -870189021612474705L;
 
-	@Id
-	private int id;
-	
-	@Column
 	private String streetAddress;
-	@Column
 	private String city;
-	@Column
 	private Country country = Country.CANADA;
 
 	/* (non-Javadoc)
@@ -67,10 +58,5 @@ public class AddressJPA implements Serializable, Address {
 	@Override
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
-	}
-	
-	@Override
-	public String toString() {
-		return id + ": " + streetAddress + ", " + city;
 	}
 }
