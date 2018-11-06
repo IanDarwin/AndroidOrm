@@ -5,7 +5,7 @@ http://tsn2.bzmedia.com/tradeshows/classinfo.aspx?id=19446&showid=34[_not_ using
 
 ____
 *Obsolete Warning* - Android now provides the _Room_ (the name is cute, and could stand for Relational Object Oriented Mapper)
-ORM tool is now Google's offically-recommended way of doing database work in Android.
+ORM tool. _Room_ is now Google's offically-recommended way of doing database work in Android.
 ____
 
 Having worked with JPA and Hibernate for years, I was a bit, um, "surprised" by the design of Android's "ContentValues" and "ContentProvider" wherein everything is reduced to mush, or at least hash, before it can be processed. So I undertook this little study.
